@@ -8,8 +8,15 @@ public class Player : MonoBehaviour {
 	// Direction
 	public	Vector2 direction = new Vector2(0,0);
 
+	public GameObject bullet;
+
+
 	// Use this for initialization
-	void Start () {
+	IEnumerator Start () {
+		while (true) {
+						Instantiate (bullet, transform.position, transform.rotation);
+						yield return new WaitForSeconds (0.05f);
+				}
 	
 	}
 	
